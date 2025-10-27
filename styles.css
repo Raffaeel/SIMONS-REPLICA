@@ -1,0 +1,153 @@
+
+/* ============================= */
+/* ESTILO GERAL (DESKTOP) */
+/* ============================= */
+body {
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center;     /* centraliza verticalmente */
+  height: 100vh;           /* altura = 100% da tela */
+  margin: 0;
+  background-color: #000000f3;
+  flex-direction: column;
+}
+
+/* Contêiner principal */
+.joy {
+  position: relative;
+  width: 560px;   
+  height: 560px;
+  border-radius: 50%;
+  background: #000;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  overflow: hidden; /* impede que os quadrantes passem do limite */
+}
+
+/* Quadrantes */
+.verde, .azul, .amarelo, .vermelho {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  border: 4px solid #000;
+  transition: 0.2s;
+}
+
+/* Cada cor */
+.verde {
+  background: #7ee84a;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 100%;
+}
+
+.azul {
+  background: #4189e6;
+  top: 0;
+  right: 0;
+  border-top-right-radius: 100%;
+}
+
+.amarelo {
+  background: #eedd46;
+  bottom: 0;
+  left: 0;
+  border-bottom-left-radius: 100%;
+}
+
+.vermelho {
+  background: #e43c34;
+  bottom: 0;
+  right: 0;
+  border-bottom-right-radius: 100%;
+}
+
+/* Botão central */
+.start {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 130px;
+  height: 130px;
+  background: #e7dad9;
+  border-radius: 50%;
+  border: 3px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: inset 0 0 6px #000, 0 0 8px rgba(0,0,0,0.5);
+  text-transform: uppercase;
+  z-index: 10;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Efeitos */
+.piscar {
+  opacity: 1;
+  box-shadow: 0 0 50px white;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+#nivel {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+  color: greenyellow;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+header h1 {
+  display: flex;
+  justify-content: center;
+  color: #7ee84a;
+}
+
+/* ============================= */
+/* TABLET (até 768px) */
+/* ============================= */
+@media (max-width: 768px) {
+  .joy {
+    width: 400px;
+    height: 400px;
+  }
+
+  .start {
+    width: 90px;
+    height: 90px;
+    font-size: 0.9rem;
+  }
+
+  #nivel {
+    font-size: 1.1rem;
+  }
+}
+
+/* ============================= */
+/* SMARTPHONE (até 480px) */
+/* ============================= */
+@media (max-width: 480px) {
+  .joy {
+    width: 280px;
+    height: 280px;
+  }
+
+  .start {
+    width: 70px;
+    height: 70px;
+    font-size: 0.8rem;
+  }
+
+  #nivel {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+}
